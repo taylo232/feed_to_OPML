@@ -39,10 +39,9 @@ db.close()
 
 
 opmfile=time.strftime("feed-%Y-%m-%d-%H%M.opml")
-# Writ einto feed.opml
+# Write into feed.opml
 f = open(opmfile, 'w')
 f.write(opml)
 f.close()
 
-#write as OPML
 
