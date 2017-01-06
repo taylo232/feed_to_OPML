@@ -1,2 +1,2 @@
 # feed_to_OPML
-Convert a Feed+ db file to a standard OPML format
+A Python script to convert a Feed+ db file to a standard OPML format
