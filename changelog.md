@@ -3,9 +3,10 @@
 #####To Do:
 * In title strings replace '&' with 'and'.
 * strip URL of any `.../default?start-index=26&max-results=25`
+* Work out if the `arg_nullreferenceexception` is caused by me (syntax? opml too long? etc.) or if it is a feature of the app!
 
 #####08/01/17
-Played aorund with a manually edited opml file and found two causes of teh error code:
+Played aorund with a manually edited opml file and found two causes of the error code:
 
 1. Any `&` in the title strings
 2. Any url ending in (for example) `.../default?start-index=26&max-results=25`. It was the `=` that was the problem.
