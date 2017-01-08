@@ -4,6 +4,7 @@
 * In title strings replace '&' with 'and'. <DONE>
 * strip URL of any `.../default?start-index=26&max-results=25` <DONE>
 * Work out if the `arg_nullreferenceexception` is caused by me (syntax? opml too long? etc.) or if it is a feature of the app!
+* Add comments (and maybe refactor) the script
 
 #### 08/01/17
 Updated the code to remove unwanted characters and strip out anything from `?` onwards.
