@@ -17,31 +17,34 @@ all_rows = cursor.fetchall()
 
 # Create opml body
 opml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><opml version=\"1.1\"><head>"
-opml += "<title><![CDATA[Feed+)]]></title><dateCreated>"
+opml += "<title><![CDATA[Feed)]]></title><dateCreated>"
 opml += time.strftime("%a, %d %b %Y %H:%M:%S +0000")
 opml += "</dateCreated></head><body>"
 
 for i in all_rows:
 	feedtext=i[6]
-	feedtitle=i[6]
-	feedXML=i[9]
+	if "&" in feedtext:
+		feedtext=feedtext.replace(" & "," and ")
+		print(feedtext)
+	feedXML=str(i[9])
+	if "=" in feedXML:
+		feedXML = feedXML[:-(len(feedXML) - feedXML.find("?"))]
+		print(feedXML)
 	feedHTML=i[4]
-	feedtype=i[3]
+	feedtype=str(i[3])
 	foo="<outline "
-	foo += "text=\"" + str(feedtext) + "\" "
-	foo += "title=\"" + str(feedtitle) + "\" "
-	foo += "xmlUrl=\"" + str(feedXML) + "\" "
-	foo += "htmlUrl=\"" + str(feedHTML) + "\" "
-	foo += "type=\"" + str(feedtype) + "\"></outline>"
+	foo += "text=\"" + feedtext + "\" "
+	foo += "title=\"" + feedtext + "\" "
+	foo += "xmlUrl=\"" + feedXML + "\" "
+	foo += "htmlUrl=\"" + feedHTML + "\" "
+	foo += "type=\"" + feedtype + "\"></outline>"
 	opml += foo
 opml += "</body></opml>"
 db.close()	
-
 
 opmfile=time.strftime("feed-%Y-%m-%d-%H%M.opml")
 # Write into feed.opml
 f = open(opmfile, 'w')
 f.write(opml)
 f.close()
-
 
