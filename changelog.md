@@ -1,5 +1,8 @@
 ## Current Status:
 
+#####To Do:
+* In title strings replace '&' with 'and'.
+* strip URL of any `.../default?start-index=26&max-results=25`
 
 #####08/01/17
 Played aorund with a manually edited opml file and found two causes of teh error code:
