@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 # TODO; Comment lines 
 # TODO: tidy up list/tuple mash in opml string build
